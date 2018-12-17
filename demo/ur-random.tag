@@ -6,7 +6,7 @@ import plots from './plots'
 
 <ur-random>
   <section>
-    <h2>Usage: <code class="language-js">function Random</code></h2>
+    <h2>Usage: <code class="language-js">Random(SEED)</code></h2>
     <p>
       A new PRNG with seed 1234 would be instantiated with <code class="language-js">const random = Random(1234)</code>. The result is a function that returns a float between 0 and 0.999... (in order to match the api of <code class="language-js">Math.random()</code>).
     </p>
@@ -42,9 +42,9 @@ import plots from './plots'
     </div>
   </section>
   <section>
-    <h2>Usage: <code class="language-js">class RandomMixin</code></h2>
+    <h2>Usage: <code class="language-js">Random.Mixin</code></h2>
     <p>
-      This is an ES6 mixin to easily create classes that have access to a PRNG ala <code class="language-js">this.random</code> and can create children with their own PRNG seeded by the parent class. So, for example, a game could have a seed, which generates levels, which generate enemies, which move randomly and drop random items. Note that <code class="language-js">RandomMixin</code> can be used with or without a parent class as it's first argument defaults to JavaScript's built in Object.
+      This is an ES6 mixin to easily create classes that have access to a PRNG ala <code class="language-js">this.random</code> and can create children with their own PRNG seeded by the parent class. So, for example, a game could have a seed, which generates levels, which generate enemies, which move randomly and drop random items. Note that <code class="language-js">Random.Mixin</code> can be used with or without a parent class as it's first argument defaults to JavaScript's built in Object.
     </p>
     <div class="columns">
       <div class={col}>

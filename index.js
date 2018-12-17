@@ -9,10 +9,8 @@
 */
 
 // PRNG algorithm borrowed from https://gist.github.com/blixt/f17b47c62508be59987b
-exports.monkey = function() {
-  console.log("what the...")
-}
-export default seed => {
+
+const Random = seed => {
   // https://stackoverflow.com/a/7616484
   if (typeof seed === 'string') {
     // convert string to integer
@@ -75,7 +73,7 @@ export default seed => {
   return random
 }
 
-export const RandomMixin = (superclass=Object) =>
+random.Mixin = (superclass=Object) =>
   class Random extends superclass {
     // creates a method this.random which is a PRNG based on opts._SEED or opts.parent.random
     constructor(opts = {}) {
@@ -90,3 +88,5 @@ export const RandomMixin = (superclass=Object) =>
       this.random = Random(this._SEED)
     }
   }
+
+export default Random

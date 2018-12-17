@@ -68,9 +68,9 @@ function seedFirst() {
 }*/
 
 const classExample = `
-  class Game extends RandomMixin() { }
+  class Game extends Random.Mixin() { }
 
-  class Level extends RandomMixin() {
+  class Level extends Random.Mixin() {
     constructor(opts) {
       super(opts)
       this.n_enemies = this.random.int(80,90)
@@ -84,7 +84,7 @@ const classExample = `
   }
 
   // assuming MoveableObject is defined else where...
-  class Enemy extends RandomMixin(MoveableObject) { }
+  class Enemy extends Random.Mixin(MoveableObject) { }
 
   const game = new Game({
     seed: 1234,
