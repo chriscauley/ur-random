@@ -1,0 +1,17 @@
+{
+  "name": "ur-random",
+  "version": "0.0.1",
+  "description": "a pseudo random number generator that spawns other pseudo random number generators",
+  "main": "index.js",
+  "scripts": {
+    "build": "parcel build index.js",
+    "serve": "parcel serve demo/index.html -p 8084",
+    "lint": "eslint js/*"
+  },
+  "author": "chriscauley",
+  "license": "ISC",
+  "dependencies": {
+    "parcel": "^1.10.3",
+    "parcel-plugin-riot": "https://github.com/chriscauley/parcel-plugin-riot.git"
+  }
+}
