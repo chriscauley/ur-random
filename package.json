@@ -1,6 +1,6 @@
 {
   "name": "ur-random",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "a pseudo random number generator that spawns other pseudo random number generators",
   "main": "index.js",
   "repository": "github.com/chriscauley/ur-random/",
