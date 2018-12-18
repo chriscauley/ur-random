@@ -6,9 +6,10 @@
   "repository": "github.com/chriscauley/ur-random/",
   "homepage": "https://chriscauley.github.io/ur-random/",
   "scripts": {
-    "build": "parcel build index.js",
-    "serve-dev": "parcel serve demo/index.html -p 8084 -d docs --public-url /ur-random/",
-    "build-dev": "parcel build demo/index.html -d docs --public-url /ur-random/",
+    "build": "rm -rf docs dist && yarn build-dist && yarn build-docs",
+    "build-dist": "parcel build index.js",
+    "serve-docs": "parcel serve demo/index.html -p 8084 -d docs --public-url /ur-random/",
+    "build-docs": "parcel build demo/index.html -d docs --public-url /ur-random/",
     "lint": "eslint js/*"
   },
   "author": "chriscauley",
