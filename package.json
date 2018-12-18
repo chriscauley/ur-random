@@ -6,6 +6,7 @@
   "scripts": {
     "build": "parcel build index.js",
     "serve": "parcel serve demo/index.html -p 8084",
+    "build-dev": "parcel build demo/index.html -d docs",
     "lint": "eslint js/*"
   },
   "author": "chriscauley",
