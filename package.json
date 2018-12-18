@@ -7,8 +7,8 @@
   "homepage": "https://chriscauley.github.io/ur-random/",
   "scripts": {
     "build": "parcel build index.js",
-    "serve-dev": "parcel serve demo/index.html -p 8084 -d docs",
-    "build-dev": "parcel build demo/index.html -d docs",
+    "serve-dev": "parcel serve demo/index.html -p 8084 -d docs --public-url /ur-random/",
+    "build-dev": "parcel build demo/index.html -d docs --public-url /ur-random/",
     "lint": "eslint js/*"
   },
   "author": "chriscauley",
