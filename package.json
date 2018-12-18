@@ -3,9 +3,11 @@
   "version": "0.0.1",
   "description": "a pseudo random number generator that spawns other pseudo random number generators",
   "main": "index.js",
+  "repository": "github.com/chriscauley/ur-random/",
+  "homepage": "https://chriscauley.github.io/ur-random/",
   "scripts": {
     "build": "parcel build index.js",
-    "serve": "parcel serve demo/index.html -p 8084",
+    "serve-dev": "parcel serve demo/index.html -p 8084 -d docs",
     "build-dev": "parcel build demo/index.html -d docs",
     "lint": "eslint js/*"
   },

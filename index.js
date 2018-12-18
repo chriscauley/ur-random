@@ -73,7 +73,7 @@ const Random = seed => {
   return random
 }
 
-random.Mixin = (superclass=Object) =>
+Random.Mixin = (superclass=Object) =>
   class Random extends superclass {
     // creates a method this.random which is a PRNG based on opts._SEED or opts.parent.random
     constructor(opts = {}) {
