@@ -1,8 +1,8 @@
 {
   "name": "ur-random",
-  "version": "0.0.2a",
+  "version": "0.0.2b",
   "description": "a pseudo random number generator that spawns other pseudo random number generators",
-  "main": "index.js",
+  "main": "dist/index.js",
   "repository": "github.com/chriscauley/ur-random/",
   "homepage": "https://chriscauley.github.io/ur-random/",
   "scripts": {
@@ -13,10 +13,8 @@
   },
   "author": "chriscauley",
   "license": "ISC",
-  "dependencies": {
-    "parcel": "^1.10.3"
-  },
   "devDependencies": {
+    "parcel": "^1.10.3",
     "parcel-plugin-riot": "https://github.com/chriscauley/parcel-plugin-riot.git"
   }
 }
