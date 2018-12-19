@@ -33,7 +33,7 @@ function showUsage() {
     [() => random(), "Same float as the first row"],
   ]
   return rows.map(([f, description]) => {
-    const code = f.toString().split('\n')[1].replace("return ","").replace(";","")
+    const code = f.toString().replace("function(){return ","").replace("}","")
     return [code,(f()||"").toString(),description]
   })
 }
