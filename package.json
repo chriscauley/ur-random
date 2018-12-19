@@ -9,7 +9,7 @@
     "build": "rm -rf docs dist && yarn build-dist && yarn build-docs",
     "build-dist": "parcel build index.js",
     "serve-docs": "parcel demo/index.html -p 8111 -d docs --public-url /ur-random/",
-    "build-docs": "parcel build demo/index.html -d docs --public-url /ur-random/",
+    "build-docs": "parcel build demo/index.html --no-minify -d docs --public-url /ur-random/",
     "lint": "eslint js/*"
   },
   "author": "chriscauley",
