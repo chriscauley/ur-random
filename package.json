@@ -1,6 +1,6 @@
 {
   "name": "ur-random",
-  "version": "0.0.2b",
+  "version": "0.0.2-c",
   "description": "a pseudo random number generator that spawns other pseudo random number generators",
   "main": "dist/index.js",
   "repository": "github.com/chriscauley/ur-random/",
@@ -8,7 +8,7 @@
   "scripts": {
     "build": "rm -rf docs dist && yarn build-dist && yarn build-docs",
     "build-dist": "parcel build index.js",
-    "serve-docs": "parcel serve demo/index.html -p 8084 -d docs --public-url /ur-random/",
+    "serve-docs": "parcel demo/index.html -p 8111 -d docs --public-url /ur-random/",
     "build-docs": "parcel build demo/index.html -d docs --public-url /ur-random/",
     "lint": "eslint js/*"
   },

@@ -81,11 +81,12 @@ Random.Mixin = (superclass=Object) =>
       if (opts._prng) {
         // derive seed from a parent PRNG
         this._SEED = opts._prng.random.getNextSeed()
-      } else {
-        this._SEED = opts._SEED || opts.seed
+      } else if (opts._SEED) {
+        this._SEED = opts._SEED
       }
 
       this.random = Random(this._SEED)
+      this._SEED = this.random.seed // in event there was no seed
     }
   }
 
