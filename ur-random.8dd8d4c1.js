@@ -22867,7 +22867,8 @@ function showUsage() {
         f = _ref2[0],
         description = _ref2[1];
 
-    var code = f.toString().replace("function(){return ", "").replace("}", "");
+    var code = f.toString().match(/return (.*);/)[1];
+    console.log(code);
     return [code, (f() || "").toString(), description];
   });
 }
@@ -22958,4 +22959,4 @@ if (document.querySelector("ur-random")) {
   riot.mount(tag);
 }
 },{"riot":"eXCg","lodash":"B1iE","../index":"S3PC","./histogram":"NStu","./plots":"sH94"}]},{},["wVrK"], null)
-//# sourceMappingURL=/ur-random/ur-random.f30e7915.map
+//# sourceMappingURL=/ur-random/ur-random.8dd8d4c1.map
