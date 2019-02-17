@@ -91,4 +91,38 @@ Random.Mixin = (superclass=Object) =>
   }
 
 
+// This takes a different approach, where the seed is stored on an obj
+const fp = Random.fp = {
+  raw: obj => (obj._PRNG = (obj._PRNG * 16807) % 2147483647), // 0-2147483646
+
+  random: obj => (fp.raw(obj) - 1) / 2147483646, // 0-1
+  int: (min = 2147483647, max) => {
+    // min-max or 0-min if no max
+    if (max === undefined) {
+      max = min
+      min = 0
+    }
+    return Math.floor(fp.random(obj) * (max - min) + min)
+  },
+
+  choice: (obj, array) => array[fp.int(obj,array.length)],
+
+  shuffle: (obj, array) => {
+    let i = array.length,
+        temp,
+        i_rand
+    // While there remain elements to shuffle...
+    while (0 !== i) {
+      // Pick a remaining element...
+      i_rand = Math.floor(fp.random(obj) * i)
+      i -= 1
+      // And swap it with the current element.
+      temp = array[i]
+      array[i] = array[i_rand]
+      array[i_rand] = temp
+    }
+    return array
+  },
+}
+
 export default Random
