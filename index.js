@@ -96,7 +96,7 @@ const fp = Random.fp = {
   raw: obj => (obj._PRNG = (obj._PRNG * 16807) % 2147483647), // 0-2147483646
 
   random: obj => (fp.raw(obj) - 1) / 2147483646, // 0-1
-  int: (min = 2147483647, max) => {
+  int: (obj, min = 2147483647, max) => {
     // min-max or 0-min if no max
     if (max === undefined) {
       max = min
