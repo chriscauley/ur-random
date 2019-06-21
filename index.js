@@ -48,7 +48,7 @@ const Random = seed => {
       if (_current <= 0) _current += 2147483646
       // for SEED < 10,000 the first number is always ~ 0.01, so let's burn that one
       // might as well use it to randomize where child seeds come from
-      n_seed = Math.floor(1e6/random())
+      n_seed = Math.floor(1e6 / random())
     },
     setSeed: number => {
       seed = number
@@ -77,7 +77,7 @@ const Random = seed => {
   return random
 }
 
-Random.Mixin = (superclass=Object) =>
+Random.Mixin = (superclass = Object) =>
   class extends superclass {
     // creates a method this.random which is a PRNG based on opts._SEED or opts.parent.random
     constructor(opts = {}) {
@@ -97,9 +97,8 @@ Random.Mixin = (superclass=Object) =>
     }
   }
 
-
 // This takes a different approach, where the seed is stored on an obj
-const fp = Random.fp = {
+const fp = (Random.fp = {
   raw: obj => (obj._PRNG = (obj._PRNG * 16807) % 2147483647), // 0-2147483646
 
   random: obj => (fp.raw(obj) - 1) / 2147483646, // 0-1
@@ -112,12 +111,12 @@ const fp = Random.fp = {
     return Math.floor(fp.random(obj) * (max - min) + min)
   },
 
-  choice: (obj, array) => array[fp.int(obj,array.length)],
+  choice: (obj, array) => array[fp.int(obj, array.length)],
 
   shuffle: (obj, array) => {
     let i = array.length,
-        temp,
-        i_rand
+      temp,
+      i_rand
     // While there remain elements to shuffle...
     while (0 !== i) {
       // Pick a remaining element...
@@ -130,6 +129,6 @@ const fp = Random.fp = {
     }
     return array
   },
-}
+})
 
 export default Random
