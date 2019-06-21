@@ -50,6 +50,10 @@ const Random = seed => {
       // might as well use it to randomize where child seeds come from
       n_seed = Math.floor(1e6/random())
     },
+    setSeed: number => {
+      seed = number
+      random.reset()
+    },
     _getCurrent: () => _current,
     shuffle: array => {
       let i = array.length,
@@ -85,7 +89,10 @@ Random.Mixin = (superclass=Object) =>
         this._SEED = opts._SEED
       }
 
-      this.random = Random(this._SEED)
+      this.setPRNG(this._SEED)
+    }
+    setPRNG(_SEED) {
+      this.random = Random(_SEED)
       this._SEED = this.random.seed // in event there was no seed
     }
   }
